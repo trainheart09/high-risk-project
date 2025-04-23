@@ -1,0 +1,11 @@
+DATE,PATIENT,ENCOUNTER,CATEGORY,CODE,DESCRIPTION,VALUE,UNITS,TYPE
+2022-01-01,p-001,e-001,Lab Test,L-001,Blood Pressure,120/80,mmHg,Vital Sign
+2022-01-02,p-002,e-002,Lab Test,L-002,Heart Rate,78,BPM,Vital Sign
+2022-01-03,p-003,e-003,Lab Test,L-003,Body Temperature,98.6,Fahrenheit,Vital Sign
+2022-01-04,p-004,e-004,Lab Test,L-004,Blood Glucose,100,mg/dL,Lab Result
+2022-01-05,p-005,e-005,Lab Test,L-005,Cholesterol,200,mg/dL,Lab Result
+2022-01-06,p-001,e-006,Physical Exam,P-001,Height,5.7,feet,Measurement
+2022-01-07,p-002,e-007,Physical Exam,P-002,Weight,160,lbs,Measurement
+2022-01-08,p-003,e-008,Physical Exam,P-003,Body Mass Index,24.9,kg/m2,Measurement
+2022-01-09,p-004,e-009,Physical Exam,P-004,Vision,20/20,,Measurement
+2022-01-10,p-005,e-010,Physical Exam,P-005,Hearing,Normal,,Measurement

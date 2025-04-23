@@ -1,0 +1,11 @@
+Id,START,STOP,PATIENT,ORGANIZATION,PROVIDER,PAYER,ENCOUNTERCLASS,CODE,DESCRIPTION,BASE_ENCOUNTER_COST,TOTAL_CLAIM_COST,PAYER_COVERAGE,REASONCODE,REASONDESCRIPTION
+e-001,2020-01-01,2020-01-15,p-001,org-001,prov-001,pay-001,ambulatory,12345,Routine checkup,100.0,150.0,75.0,67890.0,Annual physical
+e-002,2020-02-01,2020-02-15,p-002,org-002,prov-002,pay-002,inpatient,23456,Surgery,5000.0,7000.0,3500.0,78901.0,Hip replacement
+e-003,2020-03-01,2020-03-15,p-003,org-003,prov-003,pay-003,emergency,34567,Emergency treatment,3000.0,4500.0,2250.0,89012.0,Car accident
+e-004,2020-04-01,2020-04-15,p-004,org-004,prov-004,pay-004,urgentcare,45678,Urgent care visit,200.0,300.0,150.0,90123.0,Severe flu
+e-005,2020-05-01,2020-05-15,p-005,org-005,prov-005,pay-005,wellness,56789,Wellness check,120.0,180.0,90.0,23456.0,Routine physical
+e-006,2020-06-01,2020-06-15,p-001,org-006,prov-006,pay-006,ambulatory,67890,Follow-up visit,80.0,120.0,60.0,34567.0,Post-surgery checkup
+e-007,2020-07-01,2020-07-15,p-002,org-007,prov-007,pay-007,inpatient,78901,Hospitalization,7000.0,10500.0,5250.0,45678.0,Heart surgery
+e-008,2020-08-01,2020-08-15,p-003,org-008,prov-008,pay-008,emergency,89012,Emergency treatment,3000.0,4500.0,2250.0,56789.0,Stroke
+e-009,2020-09-01,2020-09-15,p-004,org-009,prov-009,pay-009,urgentcare,90123,Urgent care visit,200.0,300.0,150.0,67890.0,Broken leg
+e-010,2020-10-01,2020-10-15,p-005,org-010,prov-010,pay-010,wellness,23456,Wellness check,120.0,180.0,90.0,78901.0,Routine physical
