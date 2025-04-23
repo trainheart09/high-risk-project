@@ -7,7 +7,17 @@ import pandas as pd
 st.set_page_config(page_title="Synthetic OMOP Explorer")
 st.title("Synthetic OMOP Explorer")
 
-DATA_DIR = "/content/omop_synthetic"
+DATA_DIR = "omop_synthetic"  # updated for streamlit.io
+
+available_tables = {
+    "patients": "patients_synthetic.csv",
+    "conditions": "conditions_synthetic.csv",
+    "encounters": "encounters_synthetic.csv",
+    "medications": "medications_synthetic.csv",
+    "observations": "observations_synthetic.csv",
+    "procedures": "procedures_synthetic.csv",
+}
+
 available_tables = {
     "patients": "patients_synthetic.csv",
     "conditions": "conditions_synthetic.csv",
