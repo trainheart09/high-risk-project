@@ -1,48 +1,32 @@
-# streamlit_duckdb_app.py
-import streamlit as st
-import duckdb
-import os
-import pandas as pd
-
+# streamlit_duckdb_app.py — explore synthetic OMOP data
+import streamlit as st, duckdb, os, pandas as pd
 st.set_page_config(page_title="Synthetic OMOP Explorer")
 st.title("Synthetic OMOP Explorer")
-
-DATA_DIR = "omop_synthetic"  # updated for streamlit.io
-
-available_tables = {
+# folder where synthetic csvs are stored
+DATA_DIR = "omop_synthetic"
+# mapping table names to CSV filenames
+tables = {
     "patients": "patients_synthetic.csv",
     "conditions": "conditions_synthetic.csv",
     "encounters": "encounters_synthetic.csv",
     "medications": "medications_synthetic.csv",
     "observations": "observations_synthetic.csv",
-    "procedures": "procedures_synthetic.csv",
+    "procedures": "procedures_synthetic.csv"
 }
-
-available_tables = {
-    "patients": "patients_synthetic.csv",
-    "conditions": "conditions_synthetic.csv",
-    "encounters": "encounters_synthetic.csv",
-    "medications": "medications_synthetic.csv",
-    "observations": "observations_synthetic.csv",
-    "procedures": "procedures_synthetic.csv",
-}
-
+# connect to in-memory duckdb and load CSVs as tables
 con = duckdb.connect()
-for table_name, csv_file in available_tables.items():
-    path = os.path.join(DATA_DIR, csv_file)
+for name, file in tables.items():
+    path = os.path.join(DATA_DIR, file)
     if os.path.exists(path):
-        con.sql(f"CREATE OR REPLACE TABLE {table_name} AS SELECT * FROM read_csv_auto('{path}')")
-
+        con.sql(f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM read_csv_auto('{path}')")
+# optional: preview table schemas and top rows
 if st.checkbox("Show available tables and columns"):
-    for table in available_tables:
-        st.subheader(f"{table}")
-        try:
-            df = con.sql(f"SELECT * FROM {table} LIMIT 5").df()
-            st.dataframe(df)
-        except Exception as e:
-            st.error(f"Error previewing table `{table}`: {e}")
-
-st.subheader("🔎 Run SQL Query")
+    for name in tables:
+        st.subheader(f"{name}")
+        try: st.dataframe(con.sql(f"SELECT * FROM {name} LIMIT 5").df())
+        except Exception as e: st.error(f"Error loading `{name}`: {e}")
+# user query input
+st.subheader("Run SQL Query")
 query = st.text_area("Enter SQL query:", "SELECT * FROM patients LIMIT 5")
 if st.button("Run"):
     try:
